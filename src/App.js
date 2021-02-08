@@ -29,6 +29,11 @@ function App() {
   const bxRef = useRef(null);
   const item1Ref = useRef(null);
 
+  const navListRef = useRef(null);
+  const item2Ref = useRef(null);
+  const item3Ref = useRef(null);
+  const item4Ref = useRef(null);
+
   useEffect(() => {
     TweenMax.fromTo(
       loaderRef.current,
@@ -58,7 +63,7 @@ function App() {
     );
 
     TweenMax.fromTo(
-      ".nav-list",
+      navListRef.current,
       0.7,
       { y: 50, opacity: 0 },
       { y: 0, opacity: 1, ease: Back.easeOut.config(1.7) },
@@ -90,7 +95,7 @@ function App() {
     );
 
     TweenMax.fromTo(
-      ".item-2",
+      item2Ref.current,
       0.7,
       { y: 50, opacity: 0 },
       { y: 0, opacity: 1, ease: Back.easeOut.config(1.7) },
@@ -98,7 +103,7 @@ function App() {
     );
 
     TweenMax.fromTo(
-      ".item-3",
+      item3Ref.current,
       0.7,
       { y: 50, opacity: 0 },
       { y: 0, opacity: 1, ease: Back.easeOut.config(1.7) },
@@ -106,7 +111,7 @@ function App() {
     );
 
     TweenMax.fromTo(
-      ".item-4",
+      item4Ref.current,
       0.7,
       { y: 50, opacity: 0 },
       { y: 0, opacity: 1, ease: Back.easeOut.config(1.7) },
@@ -163,7 +168,7 @@ function App() {
                 <img style={{ maxWidth: "96px" }} src={logo} alt="Spider" />
               </a>
             </div>
-            <ul className="nav-list">
+            <ul className="nav-list" ref={navListRef}>
               <li>
                 <a href="!#" className="nav-link">
                   Home
@@ -216,13 +221,13 @@ function App() {
             <img src={spidermanText} alt="Spider Text" />
           </p>
 
-          <p className="my-2 item-2">
+          <p className="my-2 item-2" ref={item2Ref}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iaculis
             velit magna vitae mauris orci fames posuere nibh. Sit tellus amet
             facilisi sit odio pulvinar scelerisque quam et. Ultrices facilisis
             nunc massa diam, quis mi imperdiet.
           </p>
-          <p className="mt-1 flex item-3">
+          <p className="mt-1 flex item-3" ref={item3Ref}>
             <span>
               <a href="!#" className="btn">
                 Pre-order now
@@ -234,7 +239,7 @@ function App() {
               </a>
             </span>
           </p>
-          <p className="mt-2 flex align-items-center item-4">
+          <p className="mt-2 flex align-items-center item-4" ref={item4Ref}>
             <img
               src={logoPlaystation}
               className="w-auto"
